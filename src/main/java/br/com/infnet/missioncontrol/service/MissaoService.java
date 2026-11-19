@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-//Fingir que é um singletron
+//Fingir que é um singleton
 @Service
 public class MissaoService {
     private final ArrayList<Missao> missoes = new ArrayList<>() ;

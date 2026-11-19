@@ -20,6 +20,8 @@ public class MissaoController {
     public MissaoController(MissaoService missaoService) {
         this.missaoService = missaoService;
     }
+
+
     @GetMapping("/{id}")
     public ResponseEntity buscarPeloId(@PathVariable Long id) {
         Missao missao = missaoService.buscarPeloId(id);
@@ -29,6 +31,8 @@ public class MissaoController {
             return ResponseEntity.notFound().build();
         }
     }
+
+
     @GetMapping
     public List<Missao> listar(@RequestParam(required = false) StatusMissao status) {
         if(status == null){
@@ -36,12 +40,16 @@ public class MissaoController {
         }
             return missaoService.filtrarPorStatus(status);
     }
+
+
     @PostMapping
     public ResponseEntity salvar(@Valid  @RequestBody Missao missao) {
         missaoService.adicionar(missao);
         return ResponseEntity.status(HttpStatus.CREATED).body(missao);
 
     }
+
+
     @DeleteMapping("/{id}")
     public ResponseEntity deletar(@PathVariable Long id){
         if(id <= 0) {
@@ -53,6 +61,8 @@ public class MissaoController {
         }
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ErrorResponse("Id nao localizado"));
     }
+
+
     @PutMapping("/{id}")
     public ResponseEntity atualizar(@PathVariable Long  id,
                                                    @RequestBody Missao entrada){
