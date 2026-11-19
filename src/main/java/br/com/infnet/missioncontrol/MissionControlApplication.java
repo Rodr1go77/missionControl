@@ -8,6 +8,7 @@ public class MissionControlApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(MissionControlApplication.class, args);
+        System.out.println("Mission Control Application Started");
     }
 
 }
