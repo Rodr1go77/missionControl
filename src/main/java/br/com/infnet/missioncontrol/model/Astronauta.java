@@ -23,6 +23,7 @@ public class Astronauta {
     private Integer idade;
 
     @NotNull (message = "Anos de experiência são obrigatórios.")
+    @Min(value = 0, message = "Os anos de experiência não podem ser negativos.")
     private Integer anosExperiencia;
 
     @NotNull (message = "O status é obrigatório.")
