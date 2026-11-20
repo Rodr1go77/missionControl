@@ -10,5 +10,4 @@ public class MissionControlApplication {
         SpringApplication.run(MissionControlApplication.class, args);
         System.out.println("Mission Control Application Started");
     }
-
 }
